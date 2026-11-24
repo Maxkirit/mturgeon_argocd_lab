@@ -1,5 +1,5 @@
 # necessary for Traefik to route traffic to the pods
-apiVersion: v1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: wil42
