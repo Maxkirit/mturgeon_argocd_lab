@@ -5,8 +5,10 @@ metadata:
   name: wil42
   namespace: dev
 spec:
+  type: NodePort # also reachable from outside the cluster, mapped to localhost:8888 in the k3d config
   selector:
     app: wil42 # selects the pods not the Application name
   ports:
     - port: 8888
       targetPort: 8888
+      nodePort: 30888 # must be in 30000-32767 and match the k3d port mapping
