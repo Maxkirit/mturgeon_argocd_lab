@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wil42_deployment # kubectl get deploy wil42_app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wil42 # tells the deployment to look for pods named wil42
+  template:
+    metadata:
+      labels:
+        app: wil42 # label on deployment pods, also used by service discovery's selector (not active here)
+    spec:
+      containers:
+        - name: wil42
+          image: wil42/playground:v1 # change v1 to v2 to trigger deployment !
+          ports:
+            - containerPort: 8888
