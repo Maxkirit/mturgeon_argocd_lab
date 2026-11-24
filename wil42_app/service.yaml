@@ -1,0 +1,12 @@
+# this tells server how to route to the service
+apiVersion: v1
+kind: Service
+metadata:
+  name: wil42
+  namespace: dev
+spec:
+  selector:
+    app: wil42 # selects the pods not the Application name
+  ports:
+    - port: 8888
+      targetPort: 8888

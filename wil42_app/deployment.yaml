@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wil42_deployment # kubectl get deploy wil42_app
+  name: wil42-deployment # kubectl get deploy wil42_app
+  namespace: dev
 spec:
   replicas: 1
   selector:

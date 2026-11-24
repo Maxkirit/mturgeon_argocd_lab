@@ -1,0 +1,17 @@
+# necessary for Traefik to route traffic to the pods
+apiVersion: v1
+kind: Ingress
+metadata:
+  name: wil42
+  namespace: dev
+spec:
+  rules:
+    - host: wil42.localhost
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wil42
+                port: { number: 8888 }
