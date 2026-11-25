@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: wil42
-          image: wil42/playground:v2 # change v1 to v2 to trigger deployment !
+          image: wil42/playground:v1 # change v1 to v2 to trigger deployment !
           ports:
             - containerPort: 8888
